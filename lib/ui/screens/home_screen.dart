@@ -25,24 +25,27 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'User Profile',
-                  style: Theme.of(context).textTheme.headlineSmall,
-                ),
-                const SizedBox(height: 16),
-                Text('Name: ${user.name}'),
-                Text('Email: ${user.email}'),
-                Text('Address: ${user.address}'),
-                Text('Date of Birth: ${user.dob}'),
-                Text('Blood Group: ${user.bloodGroup}'),
-                Text('Gender: ${user.gender}'),
-              ],
+        child: SizedBox(
+          width: double.infinity,
+          child: Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'User Profile',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  const SizedBox(height: 16),
+                  Text('Name: ${user.name}'),
+                  Text('Email: ${user.email}'),
+                  Text('Address: ${user.address}'),
+                  Text('Date of Birth: ${user.dob}'),
+                  Text('Blood Group: ${user.bloodGroup}'),
+                  Text('Gender: ${user.gender}'),
+                ],
+              ),
             ),
           ),
         ),

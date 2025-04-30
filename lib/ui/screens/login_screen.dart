@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/di/injection.dart';
+import '../../utility/validators.dart';
 import '../presentation/bloc/auth_bloc.dart';
 import '../presentation/bloc/auth_event.dart';
 import '../presentation/bloc/auth_state.dart';
@@ -31,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState!.validate()) {
       context.read<AuthBloc>().add(LoginEvent(
         _emailController.text,
-        _passwordController.text,
+        Validators.hashPassword(_passwordController.text), // Hash the password before passing
       ));
     }
   }
